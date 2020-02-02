@@ -1,9 +1,9 @@
 const particles = [];
-
+var cnv;
 
 function setup() {
-    createCanvas(window.innerWidth, window.innerHeight);
-    console.log(width);
+    var cnv = createCanvas(window.innerWidth, window.innerHeight);
+    cnv.parent('sketch-wrapper');
 
     //decides on particle length
     const particleLength = Math.floor(window.innerWidth / 10);
@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-    background(5, 40, 12);
+    background(29, 5, 39);
     particles.forEach((p, index) => {
         p.update();
         p.draw();
