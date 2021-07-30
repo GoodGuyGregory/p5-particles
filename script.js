@@ -32,7 +32,7 @@ class Particle {
         // velocity
         this.vel = createVector(random(-2, 2), random(-2, 2));
         // size
-        this.size = 15;
+        this.size = 10;
     }
 
     //update movement by adding velocity 
