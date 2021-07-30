@@ -3,7 +3,7 @@ const particles = [];
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    console.log(width);
+    // console.log(width);
 
     //decides on particle length
     const particleLength = Math.floor(window.innerWidth / 10);
@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-    background(5, 40, 12);
+    background(20, 0, 0);
     particles.forEach((p, index) => {
         p.update();
         p.draw();
@@ -32,7 +32,7 @@ class Particle {
         // velocity
         this.vel = createVector(random(-2, 2), random(-2, 2));
         // size
-        this.size = 10;
+        this.size = 15;
     }
 
     //update movement by adding velocity 
@@ -43,7 +43,7 @@ class Particle {
 
     draw() {
         noStroke();
-        fill('rgba(255,255,255,0.5)');
+        fill('rgba(255,255,255,0.8)');
         circle(this.pos.x, this.pos.y, this.size);
     }
 
@@ -64,7 +64,9 @@ class Particle {
             const d = dist(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
 
             if (d < 120) {
-                stroke('rgba(213, 20, 207, 0.557)');
+                //  randomized color from a list
+                stroke('rgba(213, 20, 207, 0.7)');
+                strokeWeight(2);
                 line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
             }
         })
